@@ -1,0 +1,29 @@
+{
+  "name": "angular-debug-bar",
+  "version": "0.0.1",
+  "author": "Maciej Rzepinski",
+  "description": "AngularJS Debug Bar",
+  "homepage": "https://github.com/mrzepinski/angular-debug-bar",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mrzepinski/angular-debug-bar.git"
+  },
+  "main": [
+    "./dist/css/angular-debug-bar.css",
+    "./dist/css/angular-debug-bar.min.css",
+    "./dist/js/angular-debug-bar.js",
+    "./dist/js/angular-debug-bar.min.js"
+  ],
+  "ignore": [
+    ".jshintrc"
+  ],
+  "devDependencies": {
+    "angular": "~1.3.*"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ]
+}
