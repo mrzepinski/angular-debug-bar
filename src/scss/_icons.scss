@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "debugbar";
+  src: url("../font/debugbar.eot?11439546");
+  src: url("../font/debugbar.eot?11439546#iefix") format("embedded-opentype"),
+  url("../font/debugbar.woff?11439546") format("woff"),
+  url("../font/debugbar.ttf?11439546") format("truetype"),
+  url("../font/debugbar.svg?11439546#debugbar") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$icon-cog: "\e800";
+$icon-headphonses: "\e801";
+$icon-home: "\e802";
+$icon-eye: "\e803";
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "debugbar";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+}
+
+.icon-cog:before { content: $icon-cog; }
+.icon-headphones:before { content: $icon-headphonses; }
+.icon-home:before { content: $icon-home; }
+.icon-eye:before { content: $icon-eye; }

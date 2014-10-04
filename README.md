@@ -1,12 +1,13 @@
 angular-debug-bar
 ===========
 
-Missing AngularJS Debug Bar
+Missing AngularJS Debug Bar, which helps you measure performance of your app.
+
+Inspired by: https://github.com/lafikl/perfBar
 
 ### Usage:
 
-Load a module `['angular-debug-bar']`
-and simply add:
+Simply add:
 
 ````
 <!-- CSS -->
@@ -16,12 +17,14 @@ and simply add:
 <script type="text/javascript" src="dist/js/angular-debug-bar.min.js"></script>
 ```
 
-to your HTML, and then use it as a directive:
-
+to your HTML and then load module `['angular-debug-bar']`
+and put a directive invocation:
 
 ```
 <angular-debug-bar></angular-debug-bar>
 ```
+
+at the end of your html template, before `</body>` tag.
 
 ### Modify and build
 
@@ -36,6 +39,12 @@ It will create CSS from SCSS file, and minify JS & CSS files.
 ### Contribution
 
 Feel free to commit your code here :)
+
+### TODO
+
+* configurable
+* more plugins
+* tests
 
 ### License
 

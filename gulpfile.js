@@ -12,28 +12,30 @@ var gulp = require('gulp'),
 var paths = {
         output: {
             js: 'dist/js',
-            css: 'dist/css'
+            css: 'dist/css',
+            font: 'dist/font'
         },
+        js: 'src/js/' + meta.name + '.js',
         scss: 'src/scss/' + meta.name + '.scss',
-        js: 'src/js/' + meta.name + '.js'
+        font: 'src/font/*'
     },
     description = {
         top: '// ' + meta.title + ' - ' + meta.author.name + '\n' +
-            '// ' + meta.repository.url + ' - MIT License\n'
+        '// ' + meta.repository.url + ' - MIT License\n'
     };
 
-gulp.task('lint', function(){
+gulp.task('lint', function () {
     return gulp.src(paths.js)
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('js', ['lint'], function(){
+gulp.task('js', ['lint'], function () {
     return gulp.src(paths.js)
         .pipe(concat.header(description.top))
         .pipe(gulp.dest(paths.output.js))
         .pipe(uglify())
-        .pipe(rename({ suffix: '.min' }))
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.output.js));
 });
 
@@ -44,6 +46,11 @@ gulp.task('scss', function () {
         .pipe(gulp.dest(paths.output.css));
 });
 
+gulp.task('font', function () {
+    return gulp.src(paths.font)
+        .pipe(gulp.dest(paths.output.font));
+});
+
 gulp.task('css', ['scss'], function () {
     return gulp.src(paths.output.css + '/' + meta.name + '.css')
         .pipe(cssmin())
@@ -51,4 +58,4 @@ gulp.task('css', ['scss'], function () {
         .pipe(gulp.dest(paths.output.css));
 });
 
-gulp.task('default', ['js', 'css']);
+gulp.task('default', ['js', 'css', 'font']);
