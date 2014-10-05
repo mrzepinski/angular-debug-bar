@@ -1,11 +1,11 @@
 // AngularJS-Debug-Bar - Maciej Rzepinski
 // git://github.com/mrzepinski/angular-debug-bar.git - MIT License
-(function (angular, document, window) {
+(function (window, document, angular, undefined) {
     'use strict';
 
-    angular.module('angular-debug-bar', []);
+    var debugBar = angular.module('angular-debug-bar', []);
 
-    angular.module('angular-debug-bar').factory('DebugBarFactory', [
+    debugBar.factory('DebugBarFactory', [
         '$timeout',
         function ($timeout) {
             var plugins = {},
@@ -269,7 +269,7 @@
         }
     ]);
 
-    angular.module('angular-debug-bar').directive('angularDebugBarPlugins', [
+    debugBar.directive('angularDebugBarPlugins', [
         '$compile',
         function ($compile) {
             var template = function (pluginParams) {
@@ -305,7 +305,7 @@
         }
     ]);
 
-    angular.module('angular-debug-bar').directive('angularDebugBar', [
+    debugBar.directive('angularDebugBar', [
         '$compile', 'DebugBarFactory',
         function ($compile, DebugBarFactory) {
             return {
@@ -338,4 +338,4 @@
             };
         }
     ]);
-})(angular, document, window);
+})(window, window.document, window.angular);

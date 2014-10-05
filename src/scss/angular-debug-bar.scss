@@ -49,7 +49,7 @@ $buttonBorderRadius: 5px;
 
     button,
     button:hover {
-      top: -21px;
+      top: -33px;
     }
 
     ul {
@@ -61,10 +61,11 @@ $buttonBorderRadius: 5px;
   button {
     cursor: pointer;
     position: absolute;
-    left: 5px;
-    top: -13px;
+    right: 5px;
+    top: -16px;
     text-align: center;
-    padding: 3px;
+    font-size: 110%;
+    padding: 6px;
     border: none;
     outline: 0;
     background: $lightblue;
@@ -77,14 +78,14 @@ $buttonBorderRadius: 5px;
     border-top-right-radius: $buttonBorderRadius;
 
     &:hover {
-      top: -21px;
+      top: -33px;
     }
   }
 
   ul {
     list-style: none;
     padding: 0;
-    margin: 20px auto 0;
+    margin: 0 auto;
     display: block;
     width: 90%;
 

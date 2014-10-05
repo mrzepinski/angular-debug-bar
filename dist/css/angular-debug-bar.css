@@ -68,17 +68,18 @@
   #angular-debug-bar.show {
     bottom: 0; }
     #angular-debug-bar.show button, #angular-debug-bar.show button:hover {
-      top: -21px; }
+      top: -33px; }
     #angular-debug-bar.show ul {
       overflow: auto;
       max-height: 200px; }
   #angular-debug-bar button {
     cursor: pointer;
     position: absolute;
-    left: 5px;
-    top: -13px;
+    right: 5px;
+    top: -16px;
     text-align: center;
-    padding: 3px;
+    font-size: 110%;
+    padding: 6px;
     border: none;
     outline: 0;
     background: #03A9F4;
@@ -89,11 +90,11 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px; }
     #angular-debug-bar button:hover {
-      top: -21px; }
+      top: -33px; }
   #angular-debug-bar ul {
     list-style: none;
     padding: 0;
-    margin: 20px auto 0;
+    margin: 0 auto;
     display: block;
     width: 90%; }
     #angular-debug-bar ul li {
