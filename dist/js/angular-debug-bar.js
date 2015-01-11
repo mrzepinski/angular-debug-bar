@@ -317,12 +317,21 @@
                 replace: true,
                 scope: true,
                 controller: function ($scope) {
+                    var localStorage = window.localStorage,
+                        localStorageKey = 'adb.open',
+                        isLocalStorageAvailable = function () {
+                            return !!localStorage;
+                        };
+
                     $scope.plugins = {};
-                    $scope.show = false;
+                    $scope.show = isLocalStorageAvailable() ? JSON.parse(localStorage.getItem(localStorageKey)) : false;
 
                     $scope.showHide = function (event) {
                         event.preventDefault();
                         $scope.show = !$scope.show;
+                        if (isLocalStorageAvailable()) {
+                            localStorage.setItem(localStorageKey, $scope.show);
+                        }
                     };
                 },
                 compile: function ($element) {
