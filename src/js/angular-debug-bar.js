@@ -83,7 +83,7 @@
                     angular.extend(params, {
                         valueName: 'watchCount',
                         label: 'Watchers',
-                        icon: 'icon-eye'
+                        icon: 'adb-icon-eye'
                     });
                     return params;
                 }
@@ -122,7 +122,7 @@
                     angular.extend(params, {
                         valueName: 'listenerCount',
                         label: 'Listeners',
-                        icon: 'icon-headphones'
+                        icon: 'adb-icon-headphones'
                     });
                     return params;
                 }
@@ -145,7 +145,7 @@
                     angular.extend(params, {
                         valueName: 'DOMObjectCount',
                         label: 'DOM objects',
-                        icon: 'icon-home'
+                        icon: 'adb-icon-home'
                     });
                     return params;
                 }
@@ -321,7 +321,7 @@
                 },
                 compile: function ($element) {
                     var template = '<div id="angular-debug-bar" ng-class="{ \'show\': show }">' +
-                        '<button class="icon-cog" ng-click="showHide($event)"></button>' +
+                        '<button class="adb-icon-cog" ng-click="showHide($event)"></button>' +
                         '<angular-debug-bar-plugins></angular-debug-bar-plugins>' +
                         '</div>';
 

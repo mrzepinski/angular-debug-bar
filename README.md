@@ -42,9 +42,8 @@ Feel free to commit your code here :)
 
 ### TODO
 
-* configurable
-* more plugins
-* tests
+* make it configurable
+* add some tests [?]
 
 ### License
 

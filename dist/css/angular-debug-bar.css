@@ -11,7 +11,7 @@
   font-weight: normal;
   font-style: normal; }
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
+[class^="icon-"]:before, [class*="adb-icon-"]:before {
   font-family: "debugbar";
   font-style: normal;
   font-weight: normal;
@@ -33,16 +33,16 @@
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */ }
 
-.icon-cog:before {
+.adb-icon-cog:before {
   content: "\e800"; }
 
-.icon-headphones:before {
+.adb-icon-headphones:before {
   content: "\e801"; }
 
-.icon-home:before {
+.adb-icon-home:before {
   content: "\e802"; }
 
-.icon-eye:before {
+.adb-icon-eye:before {
   content: "\e803"; }
 
 #angular-debug-bar {

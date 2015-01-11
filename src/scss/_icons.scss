@@ -9,12 +9,12 @@
   font-style: normal;
 }
 
-$icon-cog: "\e800";
-$icon-headphonses: "\e801";
-$icon-home: "\e802";
-$icon-eye: "\e803";
+$adb-icon-cog: "\e800";
+$adb-icon-headphonses: "\e801";
+$adb-icon-home: "\e802";
+$adb-icon-eye: "\e803";
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
+[class^="icon-"]:before, [class*="adb-icon-"]:before {
   font-family: "debugbar";
   font-style: normal;
   font-weight: normal;
@@ -42,7 +42,7 @@ $icon-eye: "\e803";
   /* font-size: 120%; */
 }
 
-.icon-cog:before { content: $icon-cog; }
-.icon-headphones:before { content: $icon-headphonses; }
-.icon-home:before { content: $icon-home; }
-.icon-eye:before { content: $icon-eye; }
+.adb-icon-cog:before { content: $adb-icon-cog; }
+.adb-icon-headphones:before { content: $adb-icon-headphonses; }
+.adb-icon-home:before { content: $adb-icon-home; }
+.adb-icon-eye:before { content: $adb-icon-eye; }
