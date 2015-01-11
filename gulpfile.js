@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     bump = require('gulp-bump'),
     jshint = require('gulp-jshint'),
     concat = require('gulp-concat-util'),
+    ngAnnotate = require('gulp-ng-annotate'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
@@ -45,6 +46,7 @@ gulp.task('js', ['lint'], function () {
     return gulp.src(paths.js)
         .pipe(concat.header(description.top))
         .pipe(gulp.dest(paths.output.js))
+        .pipe(ngAnnotate())
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.output.js));

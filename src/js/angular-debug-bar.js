@@ -310,7 +310,7 @@
                 restrict: 'E',
                 replace: true,
                 scope: true,
-                controller: function ($scope) {
+                controller: ['$scope', function ($scope) {
                     var localStorage = window.localStorage,
                         localStorageKey = 'adb.open',
                         isLocalStorageAvailable = function () {
@@ -327,7 +327,7 @@
                             localStorage.setItem(localStorageKey, $scope.show);
                         }
                     };
-                },
+                }],
                 compile: function ($element) {
                     var template = '<div id="angular-debug-bar" ng-class="{ \'show\': show }">' +
                         '<button class="adb-icon-cog" ng-click="showHide($event)"></button>' +
