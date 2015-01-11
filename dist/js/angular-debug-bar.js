@@ -1,5 +1,5 @@
 /* 
-   angular-debug-bar v0.1.0
+   angular-debug-bar v0.2.0
    git://github.com/mrzepinski/angular-debug-bar.git
    MIT License - Maciej Rzepinski
  */
