@@ -1,15 +1,17 @@
 'use strict';
 
 var gulp = require('gulp'),
-    uglify = require('gulp-uglify'),
+    bump = require('gulp-bump'),
     jshint = require('gulp-jshint'),
-    rename = require('gulp-rename'),
     concat = require('gulp-concat-util'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     cssmin = require('gulp-cssmin'),
     meta = require('./package.json');
 
-var paths = {
+var bumpFiles = ['./bower.json', './package.json'],
+    paths = {
         output: {
             js: 'dist/js',
             css: 'dist/css',
@@ -23,6 +25,12 @@ var paths = {
         top: '// ' + meta.title + ' - ' + meta.author.name + '\n' +
         '// ' + meta.repository.url + ' - MIT License\n'
     };
+
+gulp.task('bump', function () {
+    return gulp.src(bumpFiles)
+        .pipe(bump({type: 'minor'}))
+        .pipe(gulp.dest('./'));
+});
 
 gulp.task('lint', function () {
     return gulp.src(paths.js)
