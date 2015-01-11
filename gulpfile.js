@@ -46,16 +46,16 @@ gulp.task('scss', function () {
         .pipe(gulp.dest(paths.output.css));
 });
 
-gulp.task('font', function () {
-    return gulp.src(paths.font)
-        .pipe(gulp.dest(paths.output.font));
-});
-
 gulp.task('css', ['scss'], function () {
     return gulp.src(paths.output.css + '/' + meta.name + '.css')
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.output.css));
+});
+
+gulp.task('font', function () {
+    return gulp.src(paths.font)
+        .pipe(gulp.dest(paths.output.font));
 });
 
 gulp.task('default', ['js', 'css', 'font']);
