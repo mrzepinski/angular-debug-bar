@@ -22,8 +22,11 @@ var bumpFiles = ['./bower.json', './package.json'],
         font: 'src/font/*'
     },
     description = {
-        top: '// ' + meta.title + ' - ' + meta.author.name + '\n' +
-        '// ' + meta.repository.url + ' - MIT License\n'
+        top: '/* ' + '\n'
+            + '   ' + meta.name + ' v' + meta.version + '\n'
+            + '   ' + meta.repository.url + '\n'
+            + '   MIT License - ' + meta.author.name + '\n'
+            + ' */\n\n'
     };
 
 gulp.task('bump', function () {
@@ -49,8 +52,8 @@ gulp.task('js', ['lint'], function () {
 
 gulp.task('scss', function () {
     return gulp.src(paths.scss)
-        .pipe(concat.header(description.top))
         .pipe(sass())
+        .pipe(concat.header(description.top))
         .pipe(gulp.dest(paths.output.css));
 });
 
