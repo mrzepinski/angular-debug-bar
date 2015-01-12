@@ -1,0 +1,13 @@
+<h2>AngularJS Books</h2>
+
+<p>More values, watches and DOM objects.</p>
+
+<ul>
+    <li ng-repeat="book in books track by $index">
+        <strong>{{ book.title }}</strong>
+        - author[s]:
+        <span ng-repeat="author in book.authors track by $index">
+            {{ author.name }}{{ !$last ? ', ' : '' }}
+        </span>
+    </li>
+</ul>

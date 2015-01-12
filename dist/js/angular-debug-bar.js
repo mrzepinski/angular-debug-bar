@@ -7,11 +7,12 @@
 (function (window, document, angular, undefined) {
     'use strict';
 
-    var debugBar = angular.module('angular-debug-bar', []);
+    var DEBUG_BAR_MODULE = angular.module('angular-debug-bar', []),
+        DEFAULT_INTERVAL = 1000;
 
-    debugBar.factory('DebugBarFactory', [
-        '$timeout',
-        function ($timeout) {
+    DEBUG_BAR_MODULE.factory('DebugBarFactory', [
+        '$interval',
+        function ($interval) {
             var plugins = {},
                 performance = window.performance || window.msPerformance || window.webkitPerformance || window.mozPerformance,
                 PluginAbstract = function () {},
@@ -28,26 +29,16 @@
                     label: undefined,
                     icon: undefined
                 },
-                reload = function () {
-                    angular.forEach(plugins, function (plugin) {
-                        plugin.setDefault();
-                    });
-                },
                 runPlugin = function (pluginFn) {
-                    $timeout(pluginFn, 1000);
+                    $interval(pluginFn, DEFAULT_INTERVAL);
                 },
                 DebugBarFactory = {
-                    reload: reload,
-                    registerPlugin: registerPlugin,
                     getPlugins: function () {
                         return plugins;
                     }
                 };
 
             angular.extend(PluginAbstract.prototype, {
-                setDefault: function () {
-                    throw new Error('Unimplemented method :setDefault');
-                },
                 extendScope: function () {
                     throw new Error('Unimplemented method :extendScope');
                 },
@@ -58,9 +49,6 @@
 
             // Plugin $watch count
             registerPlugin('watchCount', {
-                setDefault: function () {
-                    this.scope.watchCount = 0;
-                },
                 extendScope: function (scope) {
                     scope.watchCount = 0;
 
@@ -97,9 +85,6 @@
 
             // Plugin $listener count
             registerPlugin('listenerCount', {
-                setDefault: function () {
-                    this.scope.listenerCount = 0;
-                },
                 extendScope: function (scope) {
                     scope.listenerCount = 0;
 
@@ -136,9 +121,6 @@
 
             // Plugin DOM object count
             registerPlugin('DOMObjectCount', {
-                setDefault: function () {
-                    this.scope.DOMObjectCount = 0;
-                },
                 extendScope: function (scope) {
                     scope.DOMObjectCount = 0;
 
@@ -159,9 +141,6 @@
 
             // Plugin load time
             registerPlugin('loadTime', {
-                setDefault: function () {
-                    this.scope.loadTime = 0;
-                },
                 extendScope: function (scope) {
                     scope.loadTime = 0;
 
@@ -182,9 +161,6 @@
 
             // Plugin latency
             registerPlugin('latency', {
-                setDefault: function () {
-                    this.scope.latency = 0;
-                },
                 extendScope: function (scope) {
                     scope.latency = 0;
 
@@ -205,9 +181,6 @@
 
             // Plugin cssCount
             registerPlugin('cssCount', {
-                setDefault: function () {
-                    this.scope.cssCount = 0;
-                },
                 extendScope: function (scope) {
                     scope.cssCount = 0;
 
@@ -227,9 +200,6 @@
 
             // Plugin jsCount
             registerPlugin('jsCount', {
-                setDefault: function () {
-                    this.scope.jsCount = 0;
-                },
                 extendScope: function (scope) {
                     scope.jsCount = 0;
 
@@ -249,9 +219,6 @@
 
             // Plugin imgCount
             registerPlugin('imgCount', {
-                setDefault: function () {
-                    this.scope.imgCount = 0;
-                },
                 extendScope: function (scope) {
                     scope.imgCount = 0;
 
@@ -273,7 +240,7 @@
         }
     ]);
 
-    debugBar.directive('angularDebugBarPlugins', [
+    DEBUG_BAR_MODULE.directive('angularDebugBarPlugins', [
         '$compile',
         function ($compile) {
             var template = function (pluginParams) {
@@ -309,7 +276,7 @@
         }
     ]);
 
-    debugBar.directive('angularDebugBar', [
+    DEBUG_BAR_MODULE.directive('angularDebugBar', [
         '$compile', 'DebugBarFactory',
         function ($compile, DebugBarFactory) {
             return {
@@ -343,9 +310,6 @@
                     return function ($scope) {
                         $scope.plugins = DebugBarFactory.getPlugins();
                         $element.replaceWith($compile(template)($scope));
-                        $scope.$on('$routeChangeSuccess', function () {
-                            DebugBarFactory.reload();
-                        });
                     };
                 }
             };
