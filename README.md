@@ -33,7 +33,7 @@ You can disable all default loaded plugins.
 ~~~~javascript
 .config(['debugBarProvider', function (debugBarProvider) {
   debugBarProvider.clearDefaultPlugins();
-}
+}]);
 ~~~~
 
 #### Change refresh interval
@@ -43,7 +43,7 @@ You can set your own interval time. Default is `1000 ms`.
 ~~~~javascript
 .config(['debugBarProvider', function (debugBarProvider) {
   debugBarProvider.setRefreshInterval(10000);
-}
+}]);
 ~~~~
 
 #### Register custom plugin
@@ -51,14 +51,16 @@ You can set your own interval time. Default is `1000 ms`.
 From version `0.4.0` you can register your own plugin.
 
 ~~~~javascript
-debugBarProvider.registerPlugin('numberOfRequests', function () {
-  if ('getEntriesByType' in window.performance) {
-    return window.performance.getEntriesByType('resource').length
-  }
-  return 'N/A';
-}, {
-  label: 'Number of requests'
-});
+.config(['debugBarProvider', function (debugBarProvider) {
+  debugBarProvider.registerPlugin('numberOfRequests', function () {
+    if ('getEntriesByType' in window.performance) {
+      return window.performance.getEntriesByType('resource').length
+    }
+    return 'N/A';
+  }, {
+    label: 'Number of requests'
+  });
+}]);
 ~~~~
 
 `registerPlugin` function takes three arguments:
