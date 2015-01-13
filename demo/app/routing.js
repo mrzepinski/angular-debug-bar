@@ -1,4 +1,4 @@
-(function (angular) {
+(function (angular, undefined) {
     'use strict';
 
     angular.module('adb.routing', []).config(['$routeProvider', function ($routeProvider) {

@@ -26,6 +26,49 @@ and put a directive invocation:
 
 at the end of your html template, before `</body>` tag.
 
+#### Clear default plugins
+
+You can disable all default loaded plugins.
+
+```
+.config(['debugBarProvider', function (debugBarProvider) {
+  debugBarProvider.clearDefaultPlugins();
+}
+```
+
+#### Change refresh interval
+
+You can set your own interval time. Default is `1000 ms`.
+
+```
+.config(['debugBarProvider', function (debugBarProvider) {
+  debugBarProvider.setRefreshInterval(10000);
+}
+```
+
+#### Register custom plugin
+
+From version `0.4.0` you can register your own plugin.
+
+```
+debugBarProvider.registerPlugin('numberOfRequests', function () {
+  if ('getEntriesByType' in window.performance) {
+    return window.performance.getEntriesByType('resource').length
+  }
+  return 'N/A';
+}, {
+  label: 'Number of requests'
+});
+```
+
+`registerPlugin` function takes three arguments:
+ * name [String][required] - name of your plugin to register and store value in the scope
+ * valueFn [Function][required] - function which has to return your plugin value during checking
+ * settings [Object][optional] - optional settings like:
+  * label [String] - label to show below value
+  * unit [String] - unit to show next to value
+  * icon [String] - icon class to prepend value
+
 ### Modify and build
 
 You can change default styles for the progress bar by editing `angular-debug-bar.scss`,
@@ -42,7 +85,7 @@ Feel free to commit your code here :)
 
 ### TODO
 
-* make it configurable
+* add more default plugins
 * add some tests [?]
 
 ### License
