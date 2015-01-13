@@ -1,3 +1,7 @@
+---
+layout: index
+---
+
 angular-debug-bar
 ===========
 
