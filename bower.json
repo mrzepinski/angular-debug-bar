@@ -9,9 +9,7 @@
     "url": "git://github.com/mrzepinski/angular-debug-bar.git"
   },
   "main": [
-    "./dist/css/angular-debug-bar.css",
     "./dist/css/angular-debug-bar.min.css",
-    "./dist/js/angular-debug-bar.js",
     "./dist/js/angular-debug-bar.min.js"
   ],
   "ignore": [
