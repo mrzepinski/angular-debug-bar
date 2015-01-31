@@ -1,6 +1,6 @@
 {
   "name": "angular-debug-bar",
-  "version": "0.4.0",
+  "version": "0.4.2",
   "author": "Maciej Rzepinski",
   "description": "AngularJS Debug Bar",
   "homepage": "https://github.com/mrzepinski/angular-debug-bar",
@@ -16,8 +16,8 @@
     ".jshintrc"
   ],
   "devDependencies": {
-    "angular": "~1.3.8",
-    "angular-route": "~1.3.8"
+    "angular": "~1.3.11",
+    "angular-route": "~1.3.11"
   },
   "licenses": [
     {
