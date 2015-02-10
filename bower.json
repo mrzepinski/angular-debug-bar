@@ -16,13 +16,16 @@
     ".jshintrc"
   ],
   "devDependencies": {
-    "angular": "~1.3.11",
-    "angular-route": "~1.3.11"
+    "angular": "~1.3.13",
+    "angular-route": "~1.3.13"
   },
   "licenses": [
     {
       "type": "MIT",
       "url": "http://www.opensource.org/licenses/MIT"
     }
-  ]
+  ],
+  "resolutions": {
+    "angular": "1.3.13"
+  }
 }
