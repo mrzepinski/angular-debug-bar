@@ -5,6 +5,8 @@ Missing AngularJS Debug Bar, which helps you measure performance of your app.
 
 Inspired by: https://github.com/lafikl/perfBar
 
+[DEMO](http://mrzepinski.github.io/angular-debug-bar/)
+
 ### Usage:
 
 Simply add:
