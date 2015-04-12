@@ -7,6 +7,8 @@ Inspired by: https://github.com/lafikl/perfBar
 
 [DEMO](http://mrzepinski.github.io/angular-debug-bar/)
 
+![](http://i.imgur.com/ytrW5Bw.png)
+
 ### Usage:
 
 Simply add:
