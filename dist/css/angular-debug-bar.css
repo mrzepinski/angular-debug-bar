@@ -1,5 +1,5 @@
 /* 
-   angular-debug-bar v0.4.2
+   angular-debug-bar v1.0.0
    git://github.com/mrzepinski/angular-debug-bar.git
    MIT License - Maciej Rzepinski
  */
@@ -19,7 +19,7 @@
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
-  margin-right: 0.2em;
+  margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
   /* For safety - reset parent styles, that can break glyph codes*/
@@ -29,7 +29,7 @@
   line-height: 1em;
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
-  margin-left: 0.2em;
+  margin-left: .2em;
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */ }
 
