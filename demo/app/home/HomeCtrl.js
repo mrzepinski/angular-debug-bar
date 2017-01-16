@@ -1,6 +1,9 @@
 (function (angular, undefined) {
-    'use strict';
+  'use strict';
+  angular.module('adb.controllers')
+    .controller('HomeCtrl', HomeCtrl);
 
-    angular.module('adb.controllers').controller('HomeCtrl', ['$scope', function ($scope) {}]);
+  HomeCtrl.$inject = ['$scope'];
 
+  function HomeCtrl ($scope) {}
 }(window.angular));

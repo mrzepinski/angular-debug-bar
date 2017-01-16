@@ -1,21 +1,21 @@
 (function (angular, undefined) {
-    'use strict';
+  'use strict';
+  angular.module('adb.routing', [])
+    .config(routeConfig);
 
-    angular.module('adb.routing', []).config(['$routeProvider', function ($routeProvider) {
+  routeConfig.$inject = ['$routeProvider'];
 
-        $routeProvider
-            .when('/home', {
-                templateUrl: 'app/home/home.html',
-                controller: 'HomeCtrl'
-            })
-            .when('/test', {
-                templateUrl: 'app/test/test.html',
-                controller: 'TestCtrl'
-            })
-            .otherwise({
-                redirectTo: '/home'
-            });
-
-    }]);
-
+  function routeConfig ($routeProvider) {
+    $routeProvider.when('/home', {
+      templateUrl: 'app/home/home.html',
+      controller: 'HomeCtrl'
+    });
+    $routeProvider.when('/test', {
+      templateUrl: 'app/test/test.html',
+      controller: 'TestCtrl'
+    });
+    $routeProvider.otherwise({
+      redirectTo: '/home'
+    });
+  }
 }(window.angular));

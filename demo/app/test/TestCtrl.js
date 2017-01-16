@@ -1,30 +1,31 @@
 (function (angular, undefined) {
-    'use strict';
+  'use strict';
+  angular.module('adb.controllers')
+    .controller('TestCtrl', TestCtrl);
 
-    angular.module('adb.controllers').controller('TestCtrl', ['$scope', function ($scope) {
+  TestCtrl.$inject = ['TestCtrl'];
 
-        $scope.books = [
-            {
-                title: 'ng-book',
-                authors: [
-                    {
-                        name: 'Ari Lerner'
-                    }
-                ]
-            },
-            {
-                title: 'AngularJS',
-                authors: [
-                    {
-                        name: 'Brad Green'
-                    },
-                    {
-                        name: 'Shyam Seshadri'
-                    }
-                ]
-            }
-        ];
-
-    }]);
-
+  function TestCtrl ($scope) {
+    $scope.books = [
+      {
+        title: 'ng-book',
+        authors: [
+          {
+            name: 'Ari Lerner'
+          }
+        ]
+      },
+      {
+        title: 'AngularJS',
+        authors: [
+          {
+            name: 'Brad Green'
+          },
+          {
+            name: 'Shyam Seshadri'
+          }
+        ]
+      }
+    ];
+  }
 }(window.angular));

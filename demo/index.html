@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>AngularJS Debug Bar</title>
-        <meta charset="utf-8" />
+<head>
+  <title>AngularJS Debug Bar</title>
+  <meta charset="utf-8"/>
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="../dist/css/angular-debug-bar.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="../dist/css/angular-debug-bar.min.css"/>
 
-        <!-- JS -->
-        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
-        <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
-        <script type="text/javascript" src="../dist/js/angular-debug-bar.js"></script>
-        <script type="text/javascript" src="app/routing.js"></script>
-        <script type="text/javascript" src="app/controllers.js"></script>
-        <script type="text/javascript" src="app/home/HomeCtrl.js"></script>
-        <script type="text/javascript" src="app/test/TestCtrl.js"></script>
-        <script type="text/javascript" src="app/bootstrap.js"></script>
-    </head>
-    <body ng-app="adb">
-        <h1>AngularJS Debug Bar</h1>
+  <!-- JS -->
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="../dist/js/angular-debug-bar.min.js"></script>
+  <script type="text/javascript" src="app/routing.js"></script>
+  <script type="text/javascript" src="app/controllers.js"></script>
+  <script type="text/javascript" src="app/home/HomeCtrl.js"></script>
+  <script type="text/javascript" src="app/test/TestCtrl.js"></script>
+  <script type="text/javascript" src="app/bootstrap.js"></script>
+</head>
+<body ng-app="adb">
+<h1>AngularJS Debug Bar</h1>
 
-        <ul>
-            <li><a href="#/home">Home</a></li>
-            <li><a href="#/test">Test page to see as values changes</a></li>
-        </ul>
+<ul>
+  <li><a href="#/home">Home</a></li>
+  <li><a href="#/test">Test page to see as values changes</a></li>
+</ul>
 
-        <ng-view></ng-view>
+<ng-view></ng-view>
 
-        <angular-debug-bar></angular-debug-bar>
-    </body>
+<angular-debug-bar></angular-debug-bar>
+</body>
 </html>

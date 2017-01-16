@@ -40,13 +40,16 @@ You can disable all default loaded plugins.
 }]);
 ~~~~
 
+`clearDefaultPlugins` takes one argument:
+ * keepPlugins [Array][optional] - you can keep some plugins after clear action
+
 #### Change refresh interval
 
 You can set your own interval time. Default is `1000 ms`.
 
 ~~~~javascript
 .config(['debugBarProvider', function (debugBarProvider) {
-  debugBarProvider.setRefreshInterval(10000);
+  debugBarProvider.setRefreshInterval(1000);
 }]);
 ~~~~
 

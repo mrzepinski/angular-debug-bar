@@ -42,7 +42,18 @@ $adb-icon-eye: "\e803";
   /* font-size: 120%; */
 }
 
-.adb-icon-cog:before { content: $adb-icon-cog; }
-.adb-icon-headphones:before { content: $adb-icon-headphonses; }
-.adb-icon-home:before { content: $adb-icon-home; }
-.adb-icon-eye:before { content: $adb-icon-eye; }
+.adb-icon-cog:before {
+  content: $adb-icon-cog;
+}
+
+.adb-icon-headphones:before {
+  content: $adb-icon-headphonses;
+}
+
+.adb-icon-home:before {
+  content: $adb-icon-home;
+}
+
+.adb-icon-eye:before {
+  content: $adb-icon-eye;
+}

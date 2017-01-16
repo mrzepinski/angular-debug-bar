@@ -1,27 +1,26 @@
 (function (window, angular, undefined) {
-    'use strict';
+  'use strict';
+  angular.module('adb', [
+    'ngRoute',
+    'adb.routing',
+    'angular-debug-bar',
+    'adb.controllers'
+  ]).config(appConfig);
 
-    angular.module('adb', [
-        'ngRoute',
-        'adb.routing',
-        'angular-debug-bar',
-        'adb.controllers'
-    ]).config(['debugBarProvider', function (debugBarProvider) {
-        // change interval
-        debugBarProvider.setRefreshInterval(2000);
+  appConfig.$inject = ['debugBarProvider'];
 
-        // clear all default plugins
-        debugBarProvider.clearDefaultPlugins();
+  function appConfig (debugBarProvider) {
+    debugBarProvider.setRefreshInterval(2000);
+    debugBarProvider.clearDefaultPlugins();
+    debugBarProvider.registerPlugin('numberOfRequests', numberOfRequests, {
+      label: 'Number of requests'
+    });
+  }
 
-        // register only one custom plugin
-        debugBarProvider.registerPlugin('numberOfRequests', function () {
-            if ('getEntriesByType' in window.performance) {
-                return window.performance.getEntriesByType('resource').length
-            }
-            return 'N/A';
-        }, {
-            label: 'Number of requests'
-        });
-    }]);
-
+  function numberOfRequests () {
+    if ('getEntriesByType' in window.performance) {
+      return window.performance.getEntriesByType('resource').length
+    }
+    return 'N/A';
+  }
 }(window, window.angular));

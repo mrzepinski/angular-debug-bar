@@ -1,9 +1,10 @@
-/* 
-   angular-debug-bar v1.0.0
-   git://github.com/mrzepinski/angular-debug-bar.git
-   MIT License - Maciej Rzepinski
+/**
+ *  angular-debug-bar v1.1.0
+ *  git://github.com/mrzepinski/angular-debug-bar.git
+ *  MIT License - Maciej Rzepinski
  */
 
+@charset "UTF-8";
 @font-face {
   font-family: "debugbar";
   src: url("../font/debugbar.eot?11439546");
@@ -34,16 +35,16 @@
   /* font-size: 120%; */ }
 
 .adb-icon-cog:before {
-  content: "\e800"; }
+  content: ""; }
 
 .adb-icon-headphones:before {
-  content: "\e801"; }
+  content: ""; }
 
 .adb-icon-home:before {
-  content: "\e802"; }
+  content: ""; }
 
 .adb-icon-eye:before {
-  content: "\e803"; }
+  content: ""; }
 
 #angular-debug-bar {
   z-index: 9999;
@@ -73,7 +74,8 @@
       box-sizing: border-box; }
   #angular-debug-bar.show {
     bottom: 0; }
-    #angular-debug-bar.show button, #angular-debug-bar.show button:hover {
+    #angular-debug-bar.show button,
+    #angular-debug-bar.show button:hover {
       top: -33px; }
     #angular-debug-bar.show ul {
       overflow: auto;
