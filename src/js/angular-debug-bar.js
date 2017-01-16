@@ -135,8 +135,9 @@
             }
         });
 
-        this.clearDefaultPlugins = function () {
-            PLUGINS = {};
+        this.clearDefaultPlugins = function (keepPlugins) {
+            keepPlugins = keepPlugins || [];
+            PLUGINS = _pick(PLUGINS, keepPlugins);
         };
 
         this.setRefreshInterval = function (interval) {
